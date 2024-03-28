@@ -1,6 +1,8 @@
 
 function PokemonCard() {
-    const pokemon=[];
+    const pokemon=[[],[]];
+    let affiche;
+    let affichename;
     const pokemonList = [
         {
           name: "bulbasaur",
@@ -11,17 +13,24 @@ function PokemonCard() {
         },
       ];
       for(let i=0;i<pokemonList.length;i++){
-        if(pokemonList!==undefined){
-            pokemon.push(pokemonList[i])
+        if(pokemonList[i].imgSrc!==undefined){
+            pokemon[0].push(pokemonList[i]);
         }
+        else{
+          pokemon[1].push(pokemonList[i]);
+          
       }
+
+      }
+      pokemonList[1].imgSrc ?  affiche=<img className="card-img" src={pokemonList[0].imgSrc} /> : affiche=<p>??????????</p>;
+      pokemonList[1].imgSrc ?  affichename=pokemonList[0].name : affichename=pokemonList[1].name;
     return (
     <>
      <figure className="card">
-        <img className="car-img" src={pokemon[0].imgSrc} />
+     {affiche}
     </figure>
     <figcaption className="text-card">
-    {pokemon[0].name}
+    {affichename}
         </figcaption>
     </>
     );
