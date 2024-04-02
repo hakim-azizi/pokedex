@@ -1,3 +1,7 @@
+// import { createUseStyles } from "react-jss";
+import { useState } from "react";
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import PokemonCard from "./components/PokemonCard.jsx";
 import './App.css';
 function App() {
@@ -25,9 +29,26 @@ function App() {
       {
         name: "mew",
       },
-    ];
-  return (
-      < PokemonCard pokemon={pokemonList[3]} />
-    );
+    ]
+    const pokemonnb=pokemonList.length-1;
+    let [pokemonIndex, setCount]=useState(0);
+    const previous = (event) => {
+      setCount(pokemonIndex - 1)
+    }
+    const next = (event) => {
+      setCount(pokemonIndex + 1)
+    }
+const prev =<button onClick={previous}>Pr&eacute;c&eacute;dent</button>
+const nex =<button onClick={next}>Suivant</button>
+  const button=[prev,nex,];
+const divcreat=React.createElement('div', {id: 'change'},
+  React.createElement('button',{onClik:{previous}} ),
+ React.createElement('button',{onClik:{next}} )
+);
+ return(
+   < 
+   PokemonCard pokemon={pokemonList[pokemonIndex]} index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
+ />
+   );
 }
 export default App;
