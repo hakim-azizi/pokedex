@@ -10,8 +10,8 @@ function PokemonCard({ pokemon, buttoncreation, index,numberspokemons }) {
       <figcaption className="text-card">
         <h2>{pokemon.name}</h2>
       </figcaption>
-      {index > 0 && buttoncreation[0]}
-      {index < numberspokemons && buttoncreation[1]}
+      {/* {index > 0 && buttoncreation[0]}
+      {index < numberspokemons && buttoncreation[1]} */}
     </>
   );
 }

@@ -1,8 +1,8 @@
-// import { createUseStyles } from "react-jss";
 import { useState } from "react";
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import PokemonCard from "./components/PokemonCard.jsx";
+import NavBar from "./components/NavBar.jsx";
 import './App.css';
 function App() {
   const pokemonList = [
@@ -47,7 +47,8 @@ const divcreat=React.createElement('div', {id: 'change'},
 );
  return(
    < 
-   PokemonCard pokemon={pokemonList[pokemonIndex]} index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
+PokemonCard pokemon={pokemonList[pokemonIndex]}     index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
+//NavBar index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
  />
    );
 }
