@@ -45,11 +45,11 @@ const divcreat=React.createElement('div', {id: 'change'},
   React.createElement('button',{onClik:{previous}} ),
  React.createElement('button',{onClik:{next}} )
 );
- return(
-   < 
-PokemonCard pokemon={pokemonList[pokemonIndex]}     index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
-//NavBar index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}
- />
+ return(<>
+  <PokemonCard pokemon={pokemonList[pokemonIndex]}  index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb}  /> 
+   <NavBar index={pokemonIndex} buttoncreation={button} numberspokemons={pokemonnb} />
+   </>
    );
+
 }
 export default App;
